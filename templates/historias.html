@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+</html>
+<header class="mb-4">
+    <h2 class="fw-bolder mb-1">Historias Relatadas</h2>
+    <hr class="my-4">
+</header>
+
+{% for texto in escribir %}
+
+<div class="form-group col-md12" style="margin-top: 20px;">
+    <table>
+        <tr>
+            <td>#{{ texto.0 }}</td>
+        </tr>
+        <tbody>
+            <tr></tr>
+        </tbody>
+    </table>
+    <textarea name="output" class="form-control"  style="width: 100%;">{{ texto.1 }}</textarea>
+</div>
+
+{% endfor %}
+
+{% endblock %}

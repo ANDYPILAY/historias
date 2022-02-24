@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+{% for message in messages %}
+   <div class="alert alert-success alert-dismissible fade show" role="alert">
+    {{ message }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+{% endfor %}
+{% endif %}
+{% endwith %}
+<header class="mb-4">
+    <h2 class="fw-bolder mb-1">Relata tu historia</h2>
+</header>
+
+<div class="media">
+    <img class="align-self-start mr-3"
+        src="https://3.bp.blogspot.com/-K1aUILmASM8/Von-eeFFagI/AAAAAAAAVRc/DM2RTMrQhjg/s1600/1a92755b477499195d8ea5390ecc5988.jpg"
+        width="35">
+    <p></p>
+    <form action="/relato" method="POST">
+        <div class="media-body">
+            <textarea class="form-control" rows="15" name="texto" placeholder="Relata tu Historia........"></textarea>
+            </p>
+        </div>
+        <button class="btn btn-primary btn-lg" type="submit">Subir</button>
+    </form>
+</div>
+
+{% endblock %}
